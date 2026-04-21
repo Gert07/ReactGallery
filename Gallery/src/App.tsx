@@ -12,18 +12,6 @@ interface ImageItem {
   description: string;
 }
 
-const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
-useEffect(() => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') setTheme('dark');
-}, []);
-
-useEffect(() => {
-  localStorage.setItem('theme', theme);
-  document.documentElement.setAttribute('data-theme', theme);
-}, [theme]);
-
 const GALLERY_STORAGE_KEY = 'photoGalleryImages';
 
 const Gallery: React.FC = () => {
@@ -144,12 +132,6 @@ const Gallery: React.FC = () => {
           >
             <Plus size={20} />
             Add Photo
-          </button>
-          <button
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            className={styles.themeToggle}
-          >
-            {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
           </button>
         </div>
 
