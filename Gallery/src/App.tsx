@@ -346,7 +346,7 @@ const Gallery: React.FC = () => {
               <button
                 onClick={executeDelete}
                 className={styles.submitButton}
-                style={{ backgroundColor: '#ef4444', hover: '#dc2626' }}
+                style={{ backgroundColor: '#ef4444'}}
               >
                 Yes, Delete
               </button>
