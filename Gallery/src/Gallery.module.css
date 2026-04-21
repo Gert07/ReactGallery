@@ -1,12 +1,22 @@
 :root {
-  background: #f9fafb;
+  --bg: #ffffff;
+  --text: #111827;
+  --card: #f9fafb;
+  --border: #e5e7eb;
 }
 
+[data-theme='dark'] {
+  --bg: #111827;
+  --text: #f9fafb;
+  --card: #1f2933;
+  --border: #374151;
+}
 /* Gallery.module.css */
 
 .galleryContainer {
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: var(--bg);
+  color: var(--text);
   padding: 2rem 0;
 }
 
@@ -125,8 +135,9 @@
 
 /* Image Card */
 .imageCard {
-  background-color: white;
+  background-color: var(--card);
   border-radius: 1rem;
+  border: 1px solid var(--border);
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.3s;
@@ -192,7 +203,8 @@
 }
 
 .modalContent {
-  background-color: white;
+  background-color: var(--card);
+  color: var(--text);
   border-radius: 1rem;
   width: 100%;
   max-width: 28rem;
@@ -397,4 +409,8 @@
 .deleteButton:hover {
   background-color: rgba(239, 68, 68, 0.9);
   transform: scale(1.1);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
